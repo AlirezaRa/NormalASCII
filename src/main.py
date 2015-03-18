@@ -18,8 +18,10 @@ def digitFinderApprox(text, constant):
     # where convergence error is not sufficiently low. If it find them the next
     # iteration, it means that the group of digits indeed belongs to the
     # constant at the predicted place.
+    # Also, generator variable below basically calls module.generatorFunction()
+    # by the string name of the module.
     txt = text2digit(text)
-    generator = pi.generatorFunction()
+    generator = globals()[constant].generatorFunction()
     index = None
     while True:
         if txt in next(generator):
