@@ -7,8 +7,12 @@ constants = constantList.approx | constantList.closed
 
 def text2digit(t):
     # Returns a string equivalent of mapping each charachter of t to its ascii
-    # value. Notice that the mapping is not necessarily bijective.
-    return ''.join(map((lambda x: str(ord(x))), list(str(t))))
+    # value. Notice that the mapping is not necessarily bijective. Also, it'll
+    # pervent ascii conversion of integers in the text.
+    text = list(str(t))
+    f = (lambda x: str(int(x)) if ord(str(0)) <= ord(x) <= ord(str(9))
+                   else str(ord(x)))
+    return ''.join(map(f, text))
 
 
 def digitFinderApprox(text, constant):
