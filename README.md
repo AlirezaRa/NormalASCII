@@ -24,4 +24,4 @@ Assuming presence of Python 2.7 and a C compiler on the system:
 
 ---
 <h3> How to work with it </h3>
-Clone this project or download it as zip (link to your right). Then ``` cd ~/PATH-TO-MAIN-FOLDER/NormalASCII/src/ ``` then ``` python main.py```.
+Clone this project or download it as zip (link to your right) and extract the content. Then ``` cd ~/PATH-TO-MAIN-FOLDER/NormalASCII/src/ ``` then ``` python main.py```.
