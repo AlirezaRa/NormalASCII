@@ -1,0 +1,2 @@
+def digitFinder(n):
+    pass
