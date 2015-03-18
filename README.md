@@ -4,7 +4,7 @@ Locate texts in numbers after the decimal point of a normal number
 One could find any sequence of digits in base b in a [Normal Number](https://en.wikipedia.org/wiki/Normal_number) in base of at least b.
 Considering above, This is a fun little project for finding information in form of text (each character mapped to its ascii value, hence the name) inside the numbers after the decimal point of a normal number in base 10.
 
-It was originally motivated after reading new-age nonsense on the internet about how all the information on the universe is encoded in $pi$ and how it's so special and all that jazz. Well, it really is something special, but not necessarily for that reason since every other normal number also behaves that way and almost all numbers are normal, notwithstanding some of them are also proved to be normal number whereas $pi$ is conjectured to be.
+It was originally motivated after reading new-age nonsense on the internet [+](https://www.quora.com/Since-the-base-10-expansion-of-pi-is-infinite-and-nonrepeating-does-every-possible-sequence-of-digits-exist-somewhere-in-it)about how all the information on the universe is encoded in $pi$ and how it's so special and all that jazz. Well, it really is something special, but not necessarily for that reason since every other normal number also behaves that way and almost all numbers are normal, notwithstanding some of them are also proved to be normal number whereas $pi$ is conjectured to be.
 
 ---
 
