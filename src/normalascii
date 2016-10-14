@@ -1,0 +1,75 @@
+#!/usr/bin/env python
+
+"""
+NormalASCII
+Copyright (C) 2016  Alireza Rafiei
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation, Version 2.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, see <http://www.gnu.org/licenses/> or write to
+the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+Boston, MA  02110-1301, USA.
+"""
+
+from Constants import Constants_handler
+
+
+def text_to_digits(text):
+    """
+    Returns a string equivalent of mapping each charachter of t to its ascii
+    value. Notice that the mapping is not necessarily bijective. Also, it'll
+    pervent ascii conversion of integers in the text.
+
+    Arguments
+    ---------
+    text            str
+
+    Returns
+    -------
+    -               str
+                    Can be casted to a long.
+    """
+    letters = list(str(text))
+    f = (lambda x: str(int(x)) if ord(str(0)) <= ord(x) <= ord(str(9))
+                   else str(ord(x)))
+    return ''.join(map(f, letters))
+
+
+if __name__ == "__main__":
+    constants = set(["pi", "champernowne"])
+    pi, champernowne = Constants_handler()
+    prompt_message = """
+Anything more than around 4-5 letters for constants like pi  may
+take quite a while to compute. Also, for them, using uppercase letters
+increases the probability of reaching the result in an acceptable amount of
+time since number of digits would be lower according to ascii table\n
+Considering above, Enter your text: """
+    text = str(raw_input(prompt_message))
+    converted_text = text_to_digits(text)
+    choice = None
+    choices = [constant[0] for constant in constants] + ["q"]
+    while choice not in choices:
+        choice = str(raw_input("(p)i or (c)hampernowne or (q)uit: ")).lower()
+        if choice not in choices:
+            print "Invalid choice"
+        elif choice == "q":
+            raise SystemExit
+        else:
+            print ("Computing...")
+            if choice == "p":
+                result = pi(converted_text)
+            elif choice == "c":
+                result = champernowne(converted_text)
+            printable_choice = filter(
+                lambda x: x if x[0] == choice else None, constants)[0]
+            print ("{} is found on {}th digit after {}'s decimal point!".format(
+                text, result, printable_choice
+            ))
