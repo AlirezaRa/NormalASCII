@@ -28,7 +28,7 @@ def text_to_digits(text):
     value. Notice that the mapping is not necessarily bijective. Also, it'll
     pervent ascii conversion of integers in the text.
 
-    Arguments
+    Parameters
     ---------
     text            str
 
